@@ -7,7 +7,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'portfolio1', 
-                    URL: 'https://github.com/Dineshchandika/Dinesh-Portfolio.git'
+                    url: 'https://github.com/Dineshchandika/Dinesh-Portfolio.git'
             }
         }
         stage('Build Docker Image') {

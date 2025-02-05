@@ -30,8 +30,7 @@ pipeline {
     post {
         always {
             // Clean up by stopping and removing the container after the job
-            sh "docker ps -q --filter ancestor=${DOCKER_IMAGE} | xargs docker stop || true"
-            sh "docker ps -a -q --filter ancestor=${DOCKER_IMAGE} | xargs docker rm || true"
+            echo "Skipping cleanup to keep container running"
         }
     }
 }

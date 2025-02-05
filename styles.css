@@ -1,45 +1,151 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    text-align: center;
+    background: linear-gradient(to bottom, #0f172a, #1e293b); /* Dark Blue to Grey */
+    color: #f1f5f9; /* Light Grey */
 }
+
+/* Header Section */
 header {
-    background: #0073e6;
+    background: linear-gradient(to right, #4f46e5, #9333ea); /* Blue to Purple */
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 60px 20px;
+    animation: fadeIn 1.5s ease-in-out;
 }
-nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-    background: #005bb5;
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid white;
+    width: 0;
+    animation: typing 3s steps(20) forwards, blink 0.8s infinite;
 }
-nav ul li {
-    display: inline;
-    padding: 15px;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-section {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-h2 {
-    border-bottom: 2px solid #0073e6;
-    padding-bottom: 5px;
-}
-.project {
-    background: #e8f0ff;
-    padding: 10px;
+
+header p {
+    font-size: 1.2em;
     margin: 10px 0;
-    border-left: 5px solid #0073e6;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1s forwards;
+}
+
+/* Button */
+.btn {
+    background: #10b981; /* Teal Green */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1.5s forwards;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #059669; /* Darker Green */
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    background: rgba(255, 255, 255, 0.1); /* Slight White Transparent */
+    backdrop-filter: blur(10px);
+    margin: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+/* Skills Section */
+#skills .skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.skills-container span {
+    background: #6366f1; /* Blue */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out 0.5s forwards;
+}
+
+/* Projects */
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: #1e293b; /* Dark Grey */
+    color: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.5); /* Neon Blue Glow */
+}
+
+/* Footer */
+footer {
+    background: #111827; /* Dark Black-Grey */
+    color: white;
+    padding: 15px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 2s forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
 }

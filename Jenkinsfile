@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Dineshchandika/Dinesh-Portfolio.git'
+                git branch: 'portfolio1', 
+                    url: 'https://github.com/Dineshchandika/Dinesh-Portfolio.git'
             }
         }
         stage('Build Docker Image') {
@@ -29,8 +30,7 @@ pipeline {
     post {
         always {
             // Clean up by stopping and removing the container after the job
-            sh "docker ps -q --filter ancestor=${DOCKER_IMAGE} | xargs docker stop || true"
-            sh "docker ps -a -q --filter ancestor=${DOCKER_IMAGE} | xargs docker rm || true"
+            echo "Skipping cleanup to keep container running"
         }
     }
 }

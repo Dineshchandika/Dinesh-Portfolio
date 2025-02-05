@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container and map port 8080 of the host to port 80 in the container
-                    sh "docker run -d -p 9080:80 ${DOCKER_IMAGE}"
+                    sh "docker run -d -p 9010:80 ${DOCKER_IMAGE}"
                 }
             }
         }
